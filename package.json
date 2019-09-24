@@ -10,8 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/maxmeng93/Get-Free-SS.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "ss",
+    "freess"
+  ],
+  "author": "MaxMeng",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/maxmeng93/Get-Free-SS/issues"
