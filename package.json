@@ -1,5 +1,5 @@
 {
-  "name": "Get-Free-SS",
+  "name": "get-free-ss",
   "version": "1.0.0",
   "description": "根据source.json文件提供的数据，转换成ss软件可用的数据格式，并保存在data.json文件中",
   "main": "index.js",
