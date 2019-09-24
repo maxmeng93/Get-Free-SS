@@ -1,0 +1,90 @@
+[
+  {
+    "server": "138.68.215.124",
+    "server_port": "17086",
+    "password": "ssx.re-33626929",
+    "method": "aes-256-cfb",
+    "plugin": "",
+    "plugin_opts": "",
+    "plugin_args": "",
+    "remarks": "US 3821",
+    "timeout": 5
+  },
+  {
+    "server": "165.22.58.117",
+    "server_port": "10672",
+    "password": "isx.yt-06553595",
+    "method": "aes-256-cfb",
+    "plugin": "",
+    "plugin_opts": "",
+    "plugin_args": "",
+    "remarks": "SG 7721",
+    "timeout": 5
+  },
+  {
+    "server": "172.105.194.218",
+    "server_port": "30655",
+    "password": "QO7zjMqdMpaT",
+    "method": "aes-256-cfb",
+    "plugin": "",
+    "plugin_opts": "",
+    "plugin_args": "",
+    "remarks": "JP 145",
+    "timeout": 5
+  },
+  {
+    "server": "45.79.226.120",
+    "server_port": "23710",
+    "password": "O65k19VVAzp0",
+    "method": "aes-256-cfb",
+    "plugin": "",
+    "plugin_opts": "",
+    "plugin_args": "",
+    "remarks": "US 8306",
+    "timeout": 5
+  },
+  {
+    "server": "52.194.186.63",
+    "server_port": "26693",
+    "password": "doF3CPCCXX3M",
+    "method": "aes-256-cfb",
+    "plugin": "",
+    "plugin_opts": "",
+    "plugin_args": "",
+    "remarks": "JP 926",
+    "timeout": 5
+  },
+  {
+    "server": "45.79.228.183",
+    "server_port": "40831",
+    "password": "fEUEwvJ5GUtI",
+    "method": "aes-256-cfb",
+    "plugin": "",
+    "plugin_opts": "",
+    "plugin_args": "",
+    "remarks": "US 1486",
+    "timeout": 5
+  },
+  {
+    "server": "138.68.211.190",
+    "server_port": "14606",
+    "password": "isx.yt-23193131",
+    "method": "aes-256-cfb",
+    "plugin": "",
+    "plugin_opts": "",
+    "plugin_args": "",
+    "remarks": "US 1945",
+    "timeout": 5
+  },
+  {
+    "server": "3.112.152.71",
+    "server_port": "18375",
+    "password": "8syfa33acZTt",
+    "method": "aes-256-cfb",
+    "plugin": "",
+    "plugin_opts": "",
+    "plugin_args": "",
+    "remarks": "JP 5245",
+    "timeout": 5
+  }
+]
