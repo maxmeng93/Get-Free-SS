@@ -10,11 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/maxmeng93/Get-Free-SS.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "ss",
+    "freess"
+  ],
+  "author": "MaxMeng",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/maxmeng93/Get-Free-SS/issues"
   },
-  "homepage": "https://github.com/maxmeng93/Get-Free-SS#readme"
+  "homepage": "https://github.com/maxmeng93/Get-Free-SS#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
 }
