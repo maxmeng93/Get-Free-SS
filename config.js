@@ -1,3 +1,3 @@
 module.exports = {
-  configURL: 'D:\\Program Files\\Shadowsocks\\Shadowsocks-4.1.7.1\\gui-config.json'
+  configURL: 'D:\\Shadowsocks-4.1.6\\gui-config.json'
 };
