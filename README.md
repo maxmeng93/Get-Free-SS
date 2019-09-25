@@ -38,7 +38,7 @@ npm i
 # 打开config.js文件夹，configURL 设置为你的路径，
 
 # 6. 执行
-node index.js
+npm start
 
 # 7. 查看 data.json 文件
 ```
