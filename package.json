@@ -4,6 +4,7 @@
   "description": "自动爬取网络上公开的免费 SS 账号密码，并替换掉软件中旧的账号。",
   "main": "index.js",
   "scripts": {
+    "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
