@@ -20,15 +20,16 @@ function getData() {
     }
 
     for (let i = 0; i < trList.length; i++) {
+      const tdList = trList.eq(i).find('td');
       ssList.push({
-        server: trList.eq(i).find('td').eq(0).text(),
-        server_port: trList.eq(i).find('td').eq(1).text(),
-        password: trList.eq(i).find('td').eq(2).text(),
-        method: trList.eq(i).find('td').eq(3).text() || 'aes-256-cfb',
-        plugin: "",
-        plugin_opts: "",
-        plugin_args: "",
-        remarks: trList.eq(i).find('td').eq(5).text() + ' ' + (Math.ceil(Math.random() * 10000)),
+        server: tdList.eq(0).text(),
+        server_port: tdList.eq(1).text(),
+        password: tdList.eq(2).text(),
+        method: tdList.eq(3).text() || 'aes-256-cfb',
+        plugin: '',
+        plugin_opts: '',
+        plugin_args: '',
+        remarks: tdList.eq(5).text() + ' ' + (Math.ceil(Math.random() * 10000)),
         timeout: 5
       });
     }
