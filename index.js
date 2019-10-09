@@ -21,14 +21,14 @@ function getData() {
 
     for (let i = 0; i < trList.length; i++) {
       ssList.push({
-        server: trList.eq(i).find('td').eq(0).text(),
-        server_port: trList.eq(i).find('td').eq(1).text(),
-        password: trList.eq(i).find('td').eq(2).text(),
-        method: trList.eq(i).find('td').eq(3).text() || 'aes-256-cfb',
+        server: trList.eq(i).find('td').eq(1).text(),
+        server_port: trList.eq(i).find('td').eq(2).text(),
+        password: trList.eq(i).find('td').eq(3).text(),
+        method: trList.eq(i).find('td').eq(4).text() || 'aes-256-cfb',
         plugin: "",
         plugin_opts: "",
         plugin_args: "",
-        remarks: trList.eq(i).find('td').eq(5).text() + ' ' + (Math.ceil(Math.random() * 10000)),
+        remarks: trList.eq(i).find('td').eq(6).text() + ' ' + (Math.ceil(Math.random() * 10000)),
         timeout: 5
       });
     }
