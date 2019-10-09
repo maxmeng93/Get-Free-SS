@@ -20,6 +20,7 @@ function getData() {
     }
 
     for (let i = 0; i < trList.length; i++) {
+      const tdList = trList.eq(i).find('td');
       ssList.push({
         server: trList.eq(i).find('td').eq(1).text(),
         server_port: trList.eq(i).find('td').eq(2).text(),
