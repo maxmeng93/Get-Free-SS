@@ -1,10 +1,10 @@
 {
   "name": "get-free-ss",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "自动爬取网络上公开的免费 SS 账号密码，并替换掉软件中旧的账号。",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "node ./main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
