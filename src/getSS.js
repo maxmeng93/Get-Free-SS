@@ -45,7 +45,7 @@ module.exports = async function(ssConfig) {
   try {
     await target1().then(res => ssList = [].concat(res));
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 
   const configURL = (ssConfig && ssConfig.url) || '';
@@ -58,8 +58,7 @@ module.exports = async function(ssConfig) {
   if (configURL) {
     fs.readFile(configURL, 'utf8', function (err, data) {
       if (err) {
-        console.log('SS：读取软件配置文件失败，请检查 config/ss/url 是否设置正确');
-        return;
+        throw 'SS：读取软件配置文件失败，请检查 config/ss/url 是否设置正确';
       }
 
       let config = JSON.parse(data);

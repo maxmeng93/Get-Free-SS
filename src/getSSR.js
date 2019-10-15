@@ -61,7 +61,7 @@ module.exports = async function (ssrConfig) {
   try {
     await target1().then(res => ssrLinkList = [].concat(res));
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 
   try {
@@ -70,7 +70,7 @@ module.exports = async function (ssrConfig) {
       ssrLinkList = [].concat(list);
     });
   } catch (error) {
-    console.log(error);
+    throw error;
   }
   
   const ssrList = ssrDecode(ssrLinkList);
@@ -84,8 +84,7 @@ module.exports = async function (ssrConfig) {
   if (configURL) {
     fs.readFile(configURL, 'utf8', function (err, data) {
       if (err) {
-        console.log('SSR：读取软件配置文件失败，请检查 config/ssr/url 是否设置正确');
-        return;
+        throw 'SSR：读取软件配置文件失败，请检查 config/ssr/url 是否设置正确';
       }
 
       let config = JSON.parse(data);
