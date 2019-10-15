@@ -29,6 +29,30 @@ function target1() {
   });
 }
 
+function target2() {
+  const url = 'https://onessr.ml/articles/getArticles';
+  return request({
+    method: 'POST',
+    url,
+    formData: {
+      offset: 0,
+      pageSize: 4,
+    },
+    json: true
+  }).then(res => {
+    const articleContent = res.data && res.data[0] && res.data[0].articleContent || '';
+    const list = articleContent.split('\n');
+    return list.map(e => {
+      if (e) {
+        var reg = /(?<=>)[^<>]+(?=<)/g;
+        return e.match(reg)[0];
+      }
+    })
+  }).catch(err => {
+    throw 'SSR：target2 error';
+  });
+}
+
 module.exports = async function (ssrConfig) {
   if (!ssrConfig.enable) return;
 
@@ -36,6 +60,15 @@ module.exports = async function (ssrConfig) {
 
   try {
     await target1().then(res => ssrLinkList = [].concat(res));
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    await target2().then(res => {
+      const list = res.filter(e => e);
+      ssrLinkList = [].concat(list);
+    });
   } catch (error) {
     console.log(error);
   }
