@@ -4,7 +4,9 @@
   "description": "自动爬取网络上公开的免费 SS,SSR 账号密码，并替换掉软件中旧的账号。",
   "main": "main.js",
   "scripts": {
-    "start": "node ./main.js"
+    "start": "node ./main.js",
+    "server": "cross-env APP_TYPE=server node ./main.js",
+    "dev": "cross-env NODE_ENV=development APP_TYPE=server nodemon --ignore data/*.json ./main.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,15 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
+    "koa": "^2.10.0",
+    "koa-compress": "^3.0.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "nodemon": "^1.19.4"
   }
 }
