@@ -5,7 +5,6 @@
 module.exports = {
   // 服务器部署配置
   server: {
-    enabel: false,
     port: '8888',
   },
   ss: {

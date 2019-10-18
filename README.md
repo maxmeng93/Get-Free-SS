@@ -71,8 +71,11 @@ npm i
 # 5. 配置 config ，如果不需要自动替换软件中的旧的SS账号，则此步骤可以省略
 # 打开 config/index.js 文件，url 设置为你的 SS\SSR 软件的 'gui-config.json' 文件路径，
 
-# 6. 执行
+# 6. 运行
+# 1) 常规模式
 npm start
+# 2) 服务端部署模式
+npm run server
 
 # 7. 查看 data 文件夹中生成的文件
 ```
