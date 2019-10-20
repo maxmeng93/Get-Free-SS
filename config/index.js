@@ -3,6 +3,10 @@
  * url: 软件链接
  */
 module.exports = {
+  // 服务器部署配置
+  server: {
+    port: '8888',
+  },
   ss: {
     enable: true,
     url: 'F:\\Shadowsocks\\gui-config.json',

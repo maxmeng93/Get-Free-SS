@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>document</title>
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+  <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdn.staticfile.org/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+<style>
+[v-cloak] {
+  display: none;
+}
+</style>
+<body>
+  <div id="root" v-cloak>
+    <div>
+      <span>类型：</span>
+      <input name="SS" type="radio" value="ss" v-model="type" /> SS
+      <input name="SSR" type="radio" value="ssr" v-model="type" /> SSR
+    </div>
+
+    <ul v-if="type === 'ss'">
+      <li v-for="ss in ssList">
+        <p>地址：{{ss.server}}</p>
+        <p>端口：{{ss.server_port}}</p>
+        <p>密码：{{ss.password}}</p>
+        <p>加密：{{ss.method}}</p>
+        <p>备注：{{ss.remarks}}</p>
+      </li>
+    </ul>
+    <ul v-else>
+      <li v-for="ssr in ssrList">
+        <p>地址：{{ssr.server}}</p>
+        <p>端口：{{ssr.server_port}}</p>
+        <p>密码：{{ssr.password}}</p>
+        <p>加密：{{ssr.method}}</p>
+        <p>协议：{{ssr.protocol}}</p>
+        <p>协议参数：{{ssr.protocolparam}}</p>
+        <p>混淆：{{ssr.obfs}}</p>
+        <p>混淆参数：{{ssr.obfsparam}}</p>
+        <p>备注：{{ssr.remarks}}</p>
+        <p>Group：{{ssr.group}}</p>
+      </li>
+    </ul>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#root',
+      data: {
+        type: 'ss',
+        ssList: [],
+        ssrList: [],
+      },
+      mounted () {
+        axios.get('/api/getList').then(res => {
+          var data = (res && res.data) || {};
+
+          this.ssList = data.ss || [];
+          this.ssrList = data.ssr || [];
+        });
+      }
+    });
+  </script>
+</body>
+</html>

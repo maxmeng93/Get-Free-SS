@@ -1,3 +1,5 @@
+const chalk = require('chalk');
+
 // base64解码
 function atob(base64str) {
   return Buffer.from(base64str, 'base64').toString();
@@ -47,8 +49,14 @@ function ssrDecode(ssrLinkList) {
   });
 }
 
+// 错误消息打印
+function errLog(msg) {
+  console.log(chalk.red(msg));
+}
+
 module.exports = {
   atob,
   btoa,
   ssrDecode,
+  errLog,
 }

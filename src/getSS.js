@@ -3,6 +3,9 @@ const path = require('path');
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
+const { ss: ssConfig } = require('../config');
+const { errLog } = require('./util');
+
 function target1() {
   const ssList = [];
   const url = 'https://www.youneed.win/free-ss';
@@ -37,17 +40,7 @@ function target1() {
   });
 }
 
-module.exports = async function(ssConfig) {
-  if (!ssConfig.enable) return;
-  
-  let ssList = [];
-
-  try {
-    await target1().then(res => ssList = [].concat(res));
-  } catch (error) {
-    throw error;
-  }
-
+function saveData(ssList) {
   const configURL = (ssConfig && ssConfig.url) || '';
 
   fs.writeFile(path.join(__dirname, '../data/ss.json'), JSON.stringify(ssList, null, 2), (err) => {
@@ -71,4 +64,18 @@ module.exports = async function(ssConfig) {
       });
     });
   }
+}
+
+module.exports = async function getData () {
+  if (!ssConfig.enable) return;
+  let ssList = [];
+
+  try {
+    await target1().then(res => ssList = [].concat(res));
+  } catch (error) {
+    errLog(error);
+  }
+
+  saveData(ssList);
+  return ssList;
 }

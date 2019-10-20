@@ -3,7 +3,8 @@ const path = require('path');
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-const { ssrDecode } = require('./utils');
+const { ssr: ssrConfig  } = require('../config');
+const { ssrDecode, errLog } = require('./util');
 
 function target1() {
   const url = 'https://www.youneed.win/free-ssr';
@@ -53,27 +54,7 @@ function target2() {
   });
 }
 
-module.exports = async function (ssrConfig) {
-  if (!ssrConfig.enable) return;
-
-  let ssrLinkList = [];
-
-  try {
-    await target1().then(res => ssrLinkList = [].concat(res));
-  } catch (error) {
-    throw error;
-  }
-
-  try {
-    await target2().then(res => {
-      const list = res.filter(e => e);
-      ssrLinkList = [].concat(list);
-    });
-  } catch (error) {
-    throw error;
-  }
-  
-  const ssrList = ssrDecode(ssrLinkList);
+function saveData(ssrList) {
   const configURL = (ssrConfig && ssrConfig.url) || '';
 
   fs.writeFile(path.join(__dirname, '../data/ssr.json'), JSON.stringify(ssrList, null, 2), (err) => {
@@ -97,3 +78,28 @@ module.exports = async function (ssrConfig) {
     });
   }
 };
+
+module.exports = async function getData () {
+  if (!ssrConfig.enable) return;
+  let ssrLinkList = [];
+
+  try {
+    await target1().then(res => ssrLinkList = [].concat(res));
+  } catch (error) {
+    errLog(error);
+  }
+
+  try {
+    await target2().then(res => {
+      const list = res.filter(e => e);
+      ssrLinkList = [].concat(list);
+    });
+  } catch (error) {
+    errLog(error);
+  }
+
+  const ssrList = ssrDecode(ssrLinkList);
+
+  saveData(ssrList);
+  return ssrList;
+}
