@@ -48,7 +48,7 @@ function saveData(ssList) {
     console.log('SS：数据已保存在 /data/ss.json 文件中');
   });
 
-  if (configURL) {
+  if (process.env.APP_TYPE !== 'server' && configURL) {
     fs.readFile(configURL, 'utf8', function (err, data) {
       if (err) {
         throw 'SS：读取软件配置文件失败，请检查 config/ss/url 是否设置正确';

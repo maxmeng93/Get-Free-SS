@@ -62,7 +62,7 @@ function saveData(ssrList) {
     console.log('SSR：数据已保存在 /data/ssr.json 文件中');
   });
 
-  if (configURL) {
+  if (process.env.APP_TYPE !== 'server' && configURL) {
     fs.readFile(configURL, 'utf8', function (err, data) {
       if (err) {
         throw 'SSR：读取软件配置文件失败，请检查 config/ssr/url 是否设置正确';
