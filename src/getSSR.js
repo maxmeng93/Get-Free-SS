@@ -84,7 +84,7 @@ module.exports = async function getData () {
   let ssrLinkList = [];
 
   try {
-    await target1().then(res => ssrLinkList = [].concat(res));
+    await target1().then(res => ssrLinkList = ssrLinkList.concat(res));
   } catch (error) {
     errLog(error);
   }
@@ -92,7 +92,7 @@ module.exports = async function getData () {
   try {
     await target2().then(res => {
       const list = res.filter(e => e);
-      ssrLinkList = [].concat(list);
+      ssrLinkList = ssrLinkList.concat(list);
     });
   } catch (error) {
     errLog(error);
