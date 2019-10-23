@@ -48,8 +48,8 @@ nameserver 114.114.114.114
 # 1. 目录：C:/Windows/System32/drivers/etc，用记事本打开host文件
 
 # 2. 在文件最后位置再把以下两行加进去
-104.31.74.55 youneed.win
-104.31.74.55 www.youneed.win
+23.95.215.189 youneed.win
+23.95.215.189 www.youneed.win
 
 # 3. 进入命令行(win+R 输入cmd回车)，执行：ipconfig /flushdns
 # 4. 重新刷新页面即可，如失效请还原host并用代理访问
