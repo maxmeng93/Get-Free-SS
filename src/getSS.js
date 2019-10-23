@@ -3,14 +3,14 @@ const path = require('path');
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-const { ss: ssConfig } = require('../config');
+const { ss: ssConfig, youneed } = require('../config');
 const { errLog } = require('./util');
 
 function target1() {
   const ssList = [];
   const url = 'https://www.youneed.win/free-ss';
 
-  return request({ url }).then(body => {
+  return request({ url, ...youneed}).then(body => {
     const $ = cheerio.load(body);
     const trList = $('#container #post-box .context table tbody tr');
 
@@ -35,6 +35,7 @@ function target1() {
 
     return ssList;
   }).catch(err => {
+    console.log(err);
     const errMsg = typeof err === 'string' ? err : `失败：请检查此页面能否正常打开 ${url}`;
     throw errMsg;
   });

@@ -3,14 +3,14 @@ const path = require('path');
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-const { ssr: ssrConfig  } = require('../config');
+const { ssr: ssrConfig, youneed  } = require('../config');
 const { ssrDecode, errLog } = require('./util');
 
 function target1() {
   const url = 'https://www.youneed.win/free-ssr';
   const ssrLinkList = [];
 
-  return request({ url }).then(body => {
+  return request({ url, ...youneed }).then(body => {
     const $ = cheerio.load(body);
     const trList = $('#container #post-box .context table tbody tr');
 
