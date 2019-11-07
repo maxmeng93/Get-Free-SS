@@ -24,7 +24,7 @@ function ssrDecode(ssrLinkList) {
       remarks : '',
       id : Math.random().toString().replace('0.', ''),
       server : val1[0],
-      server_port : val1[1],
+      server_port : +val1[1],
       server_udp_port : 0,
       password : atob(val1[5]),
       method : val1[3],

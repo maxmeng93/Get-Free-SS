@@ -42,6 +42,10 @@ function target1() {
 }
 
 function saveData(ssList) {
+  if (ssList.length === 0) {
+    console.log('SS：没有爬取到数据');
+    return false;
+  }
   const configURL = (ssConfig && ssConfig.url) || '';
 
   fs.writeFile(path.join(__dirname, '../data/ss.json'), JSON.stringify(ssList, null, 2), (err) => {

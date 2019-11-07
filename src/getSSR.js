@@ -55,6 +55,10 @@ function target2() {
 }
 
 function saveData(ssrList) {
+  if (ssList.length === 0) {
+    console.log('SSR：没有爬取到数据');
+    return false;
+  }
   const configURL = (ssrConfig && ssrConfig.url) || '';
 
   fs.writeFile(path.join(__dirname, '../data/ssr.json'), JSON.stringify(ssrList, null, 2), (err) => {
