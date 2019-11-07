@@ -55,7 +55,7 @@ function target2() {
 }
 
 function saveData(ssrList) {
-  if (ssList.length === 0) {
+  if (ssrList.length === 0) {
     console.log('SSR：没有爬取到数据');
     return false;
   }
