@@ -30,6 +30,7 @@ vi /etc/hosts
 # 2. 在文件最后位置把以下两行加进去
 23.95.215.189 youneed.win
 23.95.215.189 www.youneed.win
+104.18.36.36 free-ss.site
 ```
 
 ``` bash
