@@ -51,6 +51,7 @@ nameserver 114.114.114.114
 # 2. 在文件最后位置再把以下两行加进去
 23.95.215.189 youneed.win
 23.95.215.189 www.youneed.win
+104.18.36.36 free-ss.site
 
 # 3. 进入命令行(win+R 输入cmd回车)，执行：ipconfig /flushdns
 # 4. 重新刷新页面即可，如失效请还原host并用代理访问
