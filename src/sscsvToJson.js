@@ -22,7 +22,7 @@ csv({delimiter: '\t'})
         plugin: '',
         plugin_opts: '',
         plugin_args: '',
-        remarks: e.State + ' ' + (Math.ceil(Math.random() * 10000)),
+        remarks: e.field7 + ' ' + String.prototype.slice.call(Math.random(), -3),
         timeout: 5
       };
     });
